@@ -1,68 +1,125 @@
+/* Reset and universal styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styling */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(120deg, #004a8f, #0089d1);
+    background: linear-gradient(135deg, #004a8f, #00a8ff);
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
+/* Poster container */
 .poster {
     width: 90%;
     max-width: 800px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    border: 2px solid #feca57;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Header styles */
 .header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 10px;
+    background: linear-gradient(to right, #feca57, #ff9f43);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
 }
 
 .header h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #feca57;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
+/* Roster and player cards */
 .roster {
     margin: 20px 0;
 }
 
 .player {
     background: rgba(255, 255, 255, 0.1);
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #feca57;
+    transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    color: #feca57;
 }
 
 .player h3 {
-    font-size: 1.5rem;
-    color: #feca57;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
 }
 
 .player p {
     font-size: 1.2rem;
 }
 
+/* Hover effects for player cards */
 .player:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 
+/* Footer styles */
 .footer {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 0.9rem;
     color: #ccc;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .poster {
+        padding: 15px;
+    }
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    .header h2 {
+        font-size: 1.5rem;
+    }
+    .player h3 {
+        font-size: 1.5rem;
+    }
+    .player p {
+        font-size: 1rem;
+    }
 }
